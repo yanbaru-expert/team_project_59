@@ -2,3 +2,21 @@
  *= require_tree .
  *= require_self
  */
+/* 全体 */
+.base-container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+/* max-width */
+.mw-sm {
+  max-width: 576px;
+}
+.mw-md {
+  max-width: 768px;
+}
+.mw-lg {
+  max-width: 992px;
+}
+.mw-xl {
+  max-width: 1200px;
+}
