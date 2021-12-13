@@ -9,5 +9,6 @@ ja:
         title: タイトル
         content: 内容
       movie:
+        genre: ジャンル
         title: タイトル
         url: URL
