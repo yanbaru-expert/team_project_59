@@ -1,9 +1,45 @@
-<% if user_signed_in? %>
-  <%# ログイン時 %>
-  <%= link_to "アカウント編集", edit_user_registration_path %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
-<% else %>
-  <%# 非ログイン時 %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <%= link_to image_tag('yanbaru_expert_logo.png'), root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ruby
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Ruby/Railsテキスト教材", texts_path, class: "dropdown-item" %>
+          <%= link_to "Ruby/Rails動画教材", movies_path, class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PHP
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "PHPテキスト教材", texts_path(genre: "php"), class: "dropdown-item" %>
+          <%= link_to "PHP動画教材", movies_path(genre: "php"), class: "dropdown-item" %>
+        </div>
+      </li>
+      <% if user_signed_in? %>
+        <%# ログイン時 %>
+        <li class="nav-item">
+          <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-item nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, class: "nav-item nav-link active", method: :delete, data: { confirm: "ログアウトしますか？" } %>
+        </li>
+      <% else %>
+        <%# 非ログイン時 %>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
