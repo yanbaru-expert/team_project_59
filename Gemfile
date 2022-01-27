@@ -5,6 +5,7 @@ ruby "2.7.3"
 
 gem "bootsnap", ">= 1.4.4", require: false
 gem "devise"
+gem "devise-bootstrap-views"
 gem "devise-i18n"
 gem "enum_help"
 gem "jbuilder", "~> 2.7"
