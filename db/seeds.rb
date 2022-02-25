@@ -29,3 +29,4 @@ User.find_or_create_by!(email: email) do |user|
   user.password = password
   puts "The user's initial data import was successful."
 end
+AdminUser.create!(email: "admin@example.com", password: "password", password_confirmation: "password") if Rails.env.development?
