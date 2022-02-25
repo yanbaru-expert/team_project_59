@@ -3,6 +3,8 @@
     <%= link_to t(".sign_in"), new_session_path(resource_name),class: "btn btn-secondary form-control" %><br />
   <% end -%>
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <p><%= link_to t("ゲストログイン（閲覧用）"), users_guest_sign_in_path, method: :post, class: "btn btn-success form-control" %><br />
+    </p>
     <%= link_to t(".sign_up"), new_registration_path(resource_name), class: "btn btn-secondary form-control" %><br />
   <% end -%>
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
