@@ -1,4 +1,5 @@
 class Text < ApplicationRecord
+  RAILS_GENRE_LIST = %w[basic git ruby rails].freeze
   validates :genre, presence: true
   validates :title, presence: true
   validates :content, presence: true
