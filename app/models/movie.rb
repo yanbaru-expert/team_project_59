@@ -21,5 +21,4 @@ class Movie < ApplicationRecord
       where(genre: Movie::RAILS_GENRE_LIST)
     end
   end
-
 end
